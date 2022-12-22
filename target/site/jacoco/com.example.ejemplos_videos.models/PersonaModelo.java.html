@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PersonaModelo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ejemplos_videos</a> &gt; <a href="index.source.html" class="el_package">com.example.ejemplos_videos.models</a> &gt; <span class="el_source">PersonaModelo.java</span></div><h1>PersonaModelo.java</h1><pre class="source lang-java linenums">package com.example.ejemplos_videos.models;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
+
+
+
+public class PersonaModelo {
+	
+	
+	private int id;
+	
+	@Size(min=4, max =12)
+	private String nombre;
+	
+	@Min(0)
+	private int edad;
+	
+	
+	@Min(4)
+	@Max(300)
+	private float peso;
+	
+	@Size(min=4, max =40)
+	private String pais;
+	
+	
+	private AvatarModelo avatar;
+	
+
+
+	
+<span class="nc" id="L39">	private Set&lt;PaisModelo&gt; paises = new HashSet&lt;&gt;();</span>
+	
+	public PersonaModelo() 
+	{
+<span class="nc" id="L43">		super();</span>
+		
+<span class="nc" id="L45">	}</span>
+	
+	
+	public PersonaModelo(String nombre, int edad, float peso) {
+<span class="nc" id="L49">		super();</span>
+<span class="nc" id="L50">		this.nombre = nombre;</span>
+<span class="nc" id="L51">		this.edad = edad;</span>
+<span class="nc" id="L52">		this.peso = peso;</span>
+<span class="nc" id="L53">	}</span>
+
+	
+	
+	
+	public PersonaModelo(@Size(min = 4, max = 12) String nombre, @Min(0) int edad, @Min(4) @Max(300) float peso,
+			@Size(min = 4, max = 40) String pais) {
+<span class="nc" id="L60">		super();</span>
+<span class="nc" id="L61">		this.nombre = nombre;</span>
+<span class="nc" id="L62">		this.edad = edad;</span>
+<span class="nc" id="L63">		this.peso = peso;</span>
+<span class="nc" id="L64">		this.pais = pais;</span>
+<span class="nc" id="L65">	}</span>
+
+
+	public String getPais() {
+<span class="nc" id="L69">		return pais;</span>
+	}
+
+
+	public void setPais(String pais) {
+<span class="nc" id="L74">		this.pais = pais;</span>
+<span class="nc" id="L75">	}</span>
+
+
+	@Override
+	public String toString() {
+<span class="nc" id="L80">		return &quot;PersonaModelo [id=&quot; + id + &quot;, nombre=&quot; + nombre + &quot;, edad=&quot; + edad + &quot;, peso=&quot; + peso + &quot;, pais=&quot; + pais</span>
+				+ &quot;, avatar=&quot; + avatar + &quot;]&quot;;
+	}
+
+
+	public String getNombre() {
+<span class="nc" id="L86">		return nombre;</span>
+	}
+	public void setNombre(String nombre) {
+<span class="nc" id="L89">		this.nombre = nombre;</span>
+<span class="nc" id="L90">	}</span>
+	public int getEdad() {
+<span class="nc" id="L92">		return edad;</span>
+	}
+	public void setEdad(int edad) {
+<span class="nc" id="L95">		this.edad = edad;</span>
+<span class="nc" id="L96">	}</span>
+	public float getPeso() {
+<span class="nc" id="L98">		return peso;</span>
+	}
+	public void setPeso(float peso) {
+<span class="nc" id="L101">		this.peso = peso;</span>
+<span class="nc" id="L102">	}</span>
+
+	
+	
+
+	public PersonaModelo(int id, @Size(min = 4, max = 12) String nombre, @Min(0) int edad, @Min(4) @Max(300) float peso,
+			@Size(min = 4, max = 40) String pais, AvatarModelo avatar, Set&lt;PaisModelo&gt; paises) {
+<span class="nc" id="L109">		super();</span>
+<span class="nc" id="L110">		this.id = id;</span>
+<span class="nc" id="L111">		this.nombre = nombre;</span>
+<span class="nc" id="L112">		this.edad = edad;</span>
+<span class="nc" id="L113">		this.peso = peso;</span>
+<span class="nc" id="L114">		this.pais = pais;</span>
+<span class="nc" id="L115">		this.avatar = avatar;</span>
+<span class="nc" id="L116">		this.paises = paises;</span>
+<span class="nc" id="L117">	}</span>
+
+
+	public PersonaModelo(int id, @Size(min = 4, max = 12) String nombre, @Min(0) int edad, @Min(4) @Max(300) float peso,
+			@Size(min = 4, max = 40) String pais) {
+<span class="nc" id="L122">		super();</span>
+<span class="nc" id="L123">		this.id = id;</span>
+<span class="nc" id="L124">		this.nombre = nombre;</span>
+<span class="nc" id="L125">		this.edad = edad;</span>
+<span class="nc" id="L126">		this.peso = peso;</span>
+<span class="nc" id="L127">		this.pais = pais;</span>
+<span class="nc" id="L128">	}</span>
+
+
+	public int getId() {
+<span class="nc" id="L132">		return id;</span>
+	}
+
+
+	public void setId(int id) {
+<span class="nc" id="L137">		this.id = id;</span>
+<span class="nc" id="L138">	}</span>
+
+
+	public AvatarModelo getAvatar() {
+<span class="nc" id="L142">		return avatar;</span>
+	}
+
+
+	public void setAvatar(AvatarModelo avatar) {
+<span class="nc" id="L147">		this.avatar = avatar;</span>
+<span class="nc" id="L148">	}</span>
+
+
+	public PersonaModelo(int id, @Size(min = 4, max = 12) String nombre, @Min(0) int edad, @Min(4) @Max(300) float peso,
+			@Size(min = 4, max = 40) String pais, AvatarModelo avatar) {
+<span class="nc" id="L153">		super();</span>
+<span class="nc" id="L154">		this.id = id;</span>
+<span class="nc" id="L155">		this.nombre = nombre;</span>
+<span class="nc" id="L156">		this.edad = edad;</span>
+<span class="nc" id="L157">		this.peso = peso;</span>
+<span class="nc" id="L158">		this.pais = pais;</span>
+<span class="nc" id="L159">		this.avatar = avatar;</span>
+<span class="nc" id="L160">	}</span>
+
+
+
+
+
+	public Set&lt;PaisModelo&gt; getPaises() {
+<span class="nc" id="L167">		return paises;</span>
+	}
+
+
+	public void setPaises(Set&lt;PaisModelo&gt; paises) {
+<span class="nc" id="L172">		this.paises = paises;</span>
+<span class="nc" id="L173">	}</span>
+	
+	
+	
+	
+	
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

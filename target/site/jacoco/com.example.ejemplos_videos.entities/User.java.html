@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>User.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ejemplos_videos</a> &gt; <a href="index.source.html" class="el_package">com.example.ejemplos_videos.entities</a> &gt; <span class="el_source">User.java</span></div><h1>User.java</h1><pre class="source lang-java linenums">package com.example.ejemplos_videos.entities;
+
+import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+
+public class User {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	@Column(name=&quot;username&quot;, unique=true, nullable=false, length=45)
+	private String username;
+	
+	@Column(name=&quot;password&quot;, nullable=false, length=60)
+	private String password;
+	
+	@Column(name=&quot;enabled&quot;)
+	private boolean enabled;
+	
+	@Column(name=&quot;createdat&quot;)
+	@CreationTimestamp
+	private LocalDateTime createdAt;
+	
+	@Column(name=&quot;updatedat&quot;)
+	@UpdateTimestamp
+	private LocalDateTime updatedAt;
+	
+<span class="pc" id="L47">	@OneToMany(fetch=FetchType.LAZY, mappedBy=&quot;user&quot;)</span>
+	private Set&lt;UserRole&gt; userRoles = new HashSet&lt;UserRole&gt;();
+	
+<span class="nc" id="L50">	public User(String username, String password, boolean enabled) {</span>
+<span class="nc" id="L51">		this.username = username;</span>
+<span class="nc" id="L52">		this.password = password;</span>
+<span class="nc" id="L53">		this.enabled = enabled;</span>
+<span class="nc" id="L54">	}</span>
+	
+<span class="nc" id="L56">	public User(String username, String password, boolean enabled, Set&lt;UserRole&gt; userRoles) {</span>
+<span class="nc" id="L57">		this.username = username;</span>
+<span class="nc" id="L58">		this.password = password;</span>
+<span class="nc" id="L59">		this.enabled = enabled;</span>
+<span class="nc" id="L60">		this.userRoles = userRoles;</span>
+<span class="nc" id="L61">	}</span>
+
+	public int getId() {
+<span class="nc" id="L64">		return id;</span>
+	}
+
+	public void setId(int id) {
+<span class="nc" id="L68">		this.id = id;</span>
+<span class="nc" id="L69">	}</span>
+
+	public String getUsername() {
+<span class="nc" id="L72">		return username;</span>
+	}
+
+	public void setUsername(String username) {
+<span class="nc" id="L76">		this.username = username;</span>
+<span class="nc" id="L77">	}</span>
+
+	public String getPassword() {
+<span class="nc" id="L80">		return password;</span>
+	}
+
+	public void setPassword(String password) {
+<span class="nc" id="L84">		this.password = password;</span>
+<span class="nc" id="L85">	}</span>
+
+	public boolean isEnabled() {
+<span class="nc" id="L88">		return enabled;</span>
+	}
+
+	public void setEnabled(boolean enabled) {
+<span class="nc" id="L92">		this.enabled = enabled;</span>
+<span class="nc" id="L93">	}</span>
+
+	public LocalDateTime getCreatedAt() {
+<span class="nc" id="L96">		return createdAt;</span>
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+<span class="nc" id="L100">		this.createdAt = createdAt;</span>
+<span class="nc" id="L101">	}</span>
+
+	public LocalDateTime getUpdatedAt() {
+<span class="nc" id="L104">		return updatedAt;</span>
+	}
+
+	public void setUpdatedAt(LocalDateTime updatedAt) {
+<span class="nc" id="L108">		this.updatedAt = updatedAt;</span>
+<span class="nc" id="L109">	}</span>
+
+	public Set&lt;UserRole&gt; getUserRoles() {
+<span class="nc" id="L112">		return userRoles;</span>
+	}
+
+	public void setUserRoles(Set&lt;UserRole&gt; userRoles) {
+<span class="nc" id="L116">		this.userRoles = userRoles;</span>
+<span class="nc" id="L117">	}</span>
+
+	public User(int id, String username, String password, boolean enabled, LocalDateTime createdAt,
+			LocalDateTime updatedAt, Set&lt;UserRole&gt; userRoles) {
+<span class="nc" id="L121">		super();</span>
+<span class="nc" id="L122">		this.id = id;</span>
+<span class="nc" id="L123">		this.username = username;</span>
+<span class="nc" id="L124">		this.password = password;</span>
+<span class="nc" id="L125">		this.enabled = enabled;</span>
+<span class="nc" id="L126">		this.createdAt = createdAt;</span>
+<span class="nc" id="L127">		this.updatedAt = updatedAt;</span>
+<span class="nc" id="L128">		this.userRoles = userRoles;</span>
+<span class="nc" id="L129">	}</span>
+
+	public User(int id, String username, String password) {
+<span class="nc" id="L132">		super();</span>
+<span class="nc" id="L133">		this.id = id;</span>
+<span class="nc" id="L134">		this.username = username;</span>
+<span class="nc" id="L135">		this.password = password;</span>
+<span class="nc" id="L136">	}</span>
+
+	public User(int id, String username, String password, boolean enabled, Set&lt;UserRole&gt; userRoles) {
+<span class="nc" id="L139">		super();</span>
+<span class="nc" id="L140">		this.id = id;</span>
+<span class="nc" id="L141">		this.username = username;</span>
+<span class="nc" id="L142">		this.password = password;</span>
+<span class="nc" id="L143">		this.enabled = enabled;</span>
+<span class="nc" id="L144">		this.userRoles = userRoles;</span>
+<span class="nc" id="L145">	}</span>
+
+	public User() {
+<span class="fc" id="L148">		super();</span>
+<span class="fc" id="L149">	}</span>
+	
+	
+	
+	
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PaisModelo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ejemplos_videos</a> &gt; <a href="index.source.html" class="el_package">com.example.ejemplos_videos.models</a> &gt; <span class="el_source">PaisModelo.java</span></div><h1>PaisModelo.java</h1><pre class="source lang-java linenums">package com.example.ejemplos_videos.models;
+
+
+
+
+import java.util.HashSet;
+
+import java.util.Set;
+
+
+
+
+public class PaisModelo {
+
+	
+	
+	private int id;
+	
+
+	
+	private String nombre;
+	
+	private int ranking;
+	
+	
+<span class="nc" id="L26">	public Set&lt;PersonaModelo&gt; persona = new HashSet&lt;&gt;();</span>
+
+
+	public int getId() {
+<span class="nc" id="L30">		return id;</span>
+	}
+
+
+	public void setId(int id) {
+<span class="nc" id="L35">		this.id = id;</span>
+<span class="nc" id="L36">	}</span>
+
+
+	public String getNombre() {
+<span class="nc" id="L40">		return nombre;</span>
+	}
+
+
+	public void setNombre(String nombre) {
+<span class="nc" id="L45">		this.nombre = nombre;</span>
+<span class="nc" id="L46">	}</span>
+
+
+	public int getRanking() {
+<span class="nc" id="L50">		return ranking;</span>
+	}
+
+
+	public void setRanking(int ranking) {
+<span class="nc" id="L55">		this.ranking = ranking;</span>
+<span class="nc" id="L56">	}</span>
+
+
+	public Set&lt;PersonaModelo&gt; getPersona() {
+<span class="nc" id="L60">		return persona;</span>
+	}
+
+
+	public void setPersona(Set&lt;PersonaModelo&gt; persona) {
+<span class="nc" id="L65">		this.persona = persona;</span>
+<span class="nc" id="L66">	}</span>
+
+
+	public PaisModelo(int id, String nombre, int ranking, Set&lt;PersonaModelo&gt; persona) {
+<span class="nc" id="L70">		super();</span>
+<span class="nc" id="L71">		this.id = id;</span>
+<span class="nc" id="L72">		this.nombre = nombre;</span>
+<span class="nc" id="L73">		this.ranking = ranking;</span>
+<span class="nc" id="L74">		this.persona = persona;</span>
+<span class="nc" id="L75">	}</span>
+	
+	
+	public PaisModelo(int id, String nombre, int ranking) {
+<span class="nc" id="L79">		super();</span>
+<span class="nc" id="L80">		this.id = id;</span>
+<span class="nc" id="L81">		this.nombre = nombre;</span>
+<span class="nc" id="L82">		this.ranking = ranking;</span>
+<span class="nc" id="L83">		this.persona= new HashSet&lt;&gt;();</span>
+<span class="nc" id="L84">	}</span>
+	
+	
+	public PaisModelo() {
+<span class="nc" id="L88">		super();</span>
+		
+	
+<span class="nc" id="L91">	}</span>
+	
+	
+
+	
+	
+	
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
