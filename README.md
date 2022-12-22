@@ -2,6 +2,8 @@
 GIT: https://github.com/jemi14/BACK-END_J_2022_2cuatrimestre
 Proyecto Final  de Griselda Benitez Haugg
 
+Descripción: Web que permite loguearte, crear un personaje con un avatar, ese personaje puede adquirir figuritas virtuales y elegir país candidato a ganar el mundial de fútbol. 
+
 1 - Como hacer el despliegue puede llevar tiempo y ser confuso, adjunto este video de la app web en funcionamiento:
 
 https://youtu.be/fVVgo0EUI-w
